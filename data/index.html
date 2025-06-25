@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ESP32 Pump Control</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"/>
+</head>
+<body>
+  <div class="overlay"></div>
+  <main class="main-container">
+    <h2>WEATHER API</h2>
+    <header class="input-container">
+      <input class="city-input" placeholder="Search City" type="city">
+      <button class="search-btn"><span class="material-symbols-outlined">search</span></button>
+    </header>
+
+    <!-- Weather Info Display -->
+    <section class="weather-info" style="display: none;">
+      <div class="location-date-container">
+        <div class="location">
+          <span class="material-symbols-outlined">location_on</span>
+          <h4 class="country-txt">Philippines</h4>
+        </div>
+        <h5 class="current-date-txt regular-txt">Mon, 03 March</h5>
+      </div>
+      <div class="weather-summary-container">
+        <img src="assets/weather/clouds.svg" class="weather-summary-img">
+        <div class="weather-summary-info">
+          <h1 class="temp-txt">29 °C</h1>
+          <h3 class="condition-txt regular-txt">Clouds</h3>
+        </div>
+      </div>
+      <div class="weather-conditions-container">
+        <div class="condition-item">
+          <span class="material-symbols-outlined">water_drop</span>
+          <div class="condition-info">
+            <h5 class="regular-txt">Humidity</h5>
+            <h5 class="humidity-value">55%</h5>
+          </div>
+        </div>
+        <div class="condition-item">
+          <span class="material-symbols-outlined">air</span>
+          <div class="condition-info">
+            <h5 class="regular-txt">Wind Speed</h5>
+            <h5 class="wind-value">2 M/s</h5>
+          </div>
+        </div>
+      </div>
+      <div class="forecast-item-container"></div>
+    </section>
+
+    <!-- City Search -->
+    <section class="search-city section-message">
+      <img src="assets/message/search-city.png" alt="">
+      <div>
+        <h1>Search City</h1>
+        <h4 class="regular-txt">Find out the weather conditions of the city</h4>
+      </div>
+    </section>
+
+    <!-- Not Found -->
+    <section class="not-found section-message" style="display: none;">
+      <img src="assets/message/not-found.png" alt="">
+      <div>
+        <h1>Search City</h1>
+        <h4 class="regular-txt">Find out the weather conditions of the city</h4>
+      </div>
+    </section>
+
+    <!-- Pump Control -->
+    <div class="text-container1">
+      <div class="large-text">PUMP</div>
+      <div class="small-text">AUTOMATIC/MANUAL</div>
+      <div class="toggle-wrapper">
+        <div class="controls"><a href="/togglePump" class="water-button">OPEN WATER FLOW</a></div>
+        <div class="controls"><a href="/toggleMode" class="toggle-mode">AUTOMATIC/MANUAL</a></div>
+      </div>
+    </div>
+
+    <!-- Fertilizer -->
+    <div class="text-container2">
+      <h2>FERTILIZER TANK</h2>
+      <div class="controls"><a href="/togglePump2">OPEN FERTILIZER FLOW</a></div>
+    </div>
+
+    <!-- Tank Levels -->
+    <div class="text-container3">
+      <h2>WATER TANK LEVEL</h2>
+      <div class="extra-label">FERTILIZER TANK LEVEL</div>
+      <div class="progress-circle">
+        <svg viewBox="0 0 150 150">
+          <circle class="circle-bg" cx="75" cy="75" r="70" />
+          <circle class="circle-progress" cx="75" cy="75" r="70" />
+        </svg>
+        <span class="water-tank-level-txt">0%</span>
+      </div>
+      <div class="progress-circle2">
+        <svg viewBox="0 0 150 150">
+          <circle class="circle2-bg" cx="75" cy="75" r="70" />
+          <circle class="circle2-progress" cx="75" cy="75" r="70" />
+        </svg>
+        <span id="fertilizerPercent" class="fert-tank-level-txt">0%</span>
+      </div>
+    </div>
+
+    <!-- ✅ DHT11 Sensor Display -->
+    <div class="text-container4">
+      <h2>DHT11 Sensor Readings</h2>
+      <p>Temperature: <span class="dht-temp">-- °C</span></p>
+      <p>Humidity: <span class="dht-humidity">-- %</span></p>
+    </div>
+  </main>
+  <br>
+</body>
+</html>

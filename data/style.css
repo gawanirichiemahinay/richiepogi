@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+/* ==================== GLOBAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    color: white;
+    font-weight: 600;
+}
+
+/* ==================== BODY BACKGROUND AND LAYOUT ==================== */
+body {
+    position: relative; 
+    width: 100%; 
+    height: 100dvh;
+
+    /* Background image for the whole page */
+    background-image: url('img/try.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Centering content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+.overlay {
+  height: 1000px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+/* Lower font weight class for reuse */
+.regular-txt {
+    font-weight: 400;
+}
+
+/* ==================== MAIN CONTAINER CARD ==================== */
+.main-container {
+  position: absolute;
+  top: 50px; /* Adjust this value to move it up/down */
+  left: 450px;
+  transform: translateX(-50%);
+  width: 400px;      /* Set your desired width */
+  height: 535px;  
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.8;      /* More space between lines */
+  letter-spacing: 2.5px;
+}
+
+
+/* ==================== INPUT FIELD SECTION ==================== */
+.input-container {
+  position: absolute;
+  margin-top: 20px;
+  left: 85px;
+  top: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+/* City input field */
+.city-input {
+  flex-grow: 4;
+  padding: 8px 50px;
+  border: none;
+  border-radius: 12px;
+  font-size: 11px;
+  color:white;
+  background: transparent;
+  outline: none;
+}
+
+
+
+/* Input placeholder text */
+.city-input::placeholder {
+    color: #ccc;
+    font-size: 11px;
+    position: absolute;
+    left: 50px;
+}
+
+/* Search button (icon) */
+.search-btn {
+     background: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 180px;
+}
+
+/* ==================== WEATHER INFO DISPLAY ==================== */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+/* Location and Date section */
+.location-date-container {
+    border: solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location {
+    border: solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Summary: icon and current temperature/condition */
+.weather-summary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-summary-img {
+    width: 120px;
+    height: 120px;
+}
+
+.weather-summary-info {
+    text-align: end;
+}
+
+/* Humidity and wind data section */
+.weather-conditions-container {
+    border: solid transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Individual condition item layout */
+.condition-item {
+    border: solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Icon size inside condition item */
+.condition-item span {
+    font-size: 30px;
+}
+
+/* ==================== FORECAST SLIDER ==================== */
+.forecast-item-container {
+    display: flex;
+    gap: 15px;
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+
+/* Custom scrollbar styles */
+.forecast-item-container::-webkit-scrollbar {
+    height: 8px;
+}
+.forecast-item-container::-webkit-scrollbar-track {
+    background: rgb(0,0,0,0.15);
+    border-radius: 99px;
+}
+.forecast-item-container::-webkit-scrollbar-thumb {
+    background: rgb(0,0,0,0.15);
+    border-radius: 99px;
+}
+
+/* Each forecast card */
+.forecast-item {
+    min-width: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.3s background;
+}
+
+/* Hover effect on forecast card */
+.forecast-item:hover {
+    background: rgba(0,0,0,0.15);
+}
+
+.forecast-item-img {
+    width: 35px;
+    height: 35px;
+}
+
+/* ==================== INFO / ERROR SECTIONS ==================== */
+.section-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
+}
+
+.section-message img {
+    height: 150px;
+    width: fit-content;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.status p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+
+
+.text-container1 {
+ position: absolute;
+  top: 1px; /* Adjust this value to move it up/down */
+  left: 520px;
+  transform: translateX(-50%);
+  width: 200px;      /* Set your desired width */
+  height: 347px;  
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.8;      /* More space between lines */
+  letter-spacing: 1px;
+  
+}
+
+.text-container1 .large-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text-container1 .small-text {
+  font-size: 12px;
+}
+.toggle-mode {
+  position: absolute;
+  top: 120px;    /* adjust this to move vertically */
+  left: 20px;  
+  width: 160px;  /* adjust this to move horizontally */
+  white-space: nowrap;
+  padding: 14px 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+.water-button {
+  position: absolute;
+  top: 250px;    /* adjust this to move vertically */
+  left: 20px;  
+  width: 160px;  /* adjust this to move horizontally */
+  white-space: nowrap;
+  padding: 14px 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+
+.water-button:hover {
+  background-color: #45a049;
+}
+
+.text-container2 {
+  position: absolute;
+  top: 358px; /* Adjust this value to move it up/down */
+  left: 520px;
+  transform: translateX(-50%);
+  width: 200px;      /* Set your desired width */
+  height: 178px;  
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;      /* More space between lines */
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+
+a {
+  position: absolute;
+  top: 90px;    /* adjust this to move vertically */
+  left:20px;  
+  width: 160px;  /* adjust this to move horizontally */
+  white-space: nowrap;
+  padding: 14px 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.text-container2 button:hover {
+  background-color: #45a049;
+}
+
+.text-container3 {
+ position: absolute;
+  top: 1px; /* Adjust this value to move it up/down */
+  left: 740px;
+  transform: translateX(-50%);
+  width: 200px;      /* Set your desired width */
+  height: 535px;  
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;      /* More space between lines */
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+.extra-label {
+  position: absolute;
+  top: 268px;     /* Adjust as needed */
+  left: 3px;   /* Adjust as needed */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.progress-circle {
+  position: absolute;      /* enable positioning */
+  top: 100px;              /* change this to move vertically */
+  left: 40px;             /* change this to move horizontally */
+  width: 120px;           /* change this to resize */
+  height: 120px;          /* change this to resize */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;        /* controls text size inside */
+  font-weight: 700;
+  color: white;
+  background: transparent; /* make sure background is clear */
+}
+
+.progress-circle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Background circle */
+.circle-bg {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 12;
+}
+
+/* Progress circle stroke */
+.circle-progress {
+  fill: transparent;
+  stroke: #4caf50;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 439.8;
+  stroke-dashoffset: 110;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+
+/* Positioning the second circle */
+.progress-circle2 {
+  position: absolute;
+  top: 350px; /* Adjust as needed */
+  left: 40px;  /* Adjust as needed */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;        /* controls text size inside */
+  font-weight: 700;
+  color: white;
+  background: transparent; 
+}
+
+.progress-circle2 svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.circle2-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 10;
+}
+
+.circle2-progress {
+  fill: none;
+  stroke: #4caf50;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-circle2 span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
